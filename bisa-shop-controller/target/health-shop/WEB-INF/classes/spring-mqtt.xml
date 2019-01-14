@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd">
+
+    <!-- 配置connnection-factory,指定连接rabbit server 的参数 -->
+    <rabbit:connection-factory id="rabbitConnectionFactory"
+                               username="${rmq.manager.user}" password="${rmq.manager.password}"
+                               host="${rmq.ip}" port="${rmq.port}" virtual-host="${rmq.virtual.host}"/>
+
+    <!--定义rabbit template用于数据的接收和发送 -->
+    <rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/>
+
+
+    <!-- 交换机的四种模式： direct：转发消息到 routigKey 指定的队列。 topic：按规则转发消息（最灵活）。 headers：（这个还没有接触到）  fanout：转发消息到所有绑定队列 -->
+    <rabbit:direct-exchange name="${exchange1}" durable="true" auto-delete="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="${queue1}" key="${routingkey1}"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    <!-- 下单延时队列 -->
+    <rabbit:queue name="${queue1}" durable="true" exclusive="false" auto-delete="false">
+        <rabbit:queue-arguments>
+            <entry key="x-message-ttl" value="${interval1}" value-type="java.lang.Long"/>
+            <entry key="x-dead-letter-exchange" value="${exchange2}"/>
+            <entry key="x-dead-letter-routing-key" value="${routingkey2}"/>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+
+    <rabbit:direct-exchange name="${exchange2}" durable="true" auto-delete="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="${queue2}" key="${routingkey2}"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    <!-- 下单死信队列 -->
+    <rabbit:queue name="${queue2}" durable="true" exclusive="false" auto-delete="false"/>
+
+
+    <rabbit:direct-exchange name="${exchange3}" durable="true" auto-delete="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="${queue3}" key="${routingkey3}"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    <!-- 取消订单延迟队列 -->
+    <rabbit:queue name="${queue3}" durable="true" exclusive="false" auto-delete="false">
+        <rabbit:queue-arguments>
+            <entry key="x-message-ttl" value="${interval3}" value-type="java.lang.Long"/>
+            <entry key="x-dead-letter-exchange" value="${exchange4}"/>
+            <entry key="x-dead-letter-routing-key" value="${routingkey4}"/>
+        </rabbit:queue-arguments>
+    </rabbit:queue>
+
+    <rabbit:direct-exchange name="${exchange4}" durable="true" auto-delete="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="${queue4}" key="${routingkey4}"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    <!-- 下单死信队列 -->
+    <rabbit:queue name="${queue4}" durable="true" exclusive="false" auto-delete="false"/>
+
+    <!--自定义消息接受者-->
+    <bean id="consumor1" class="com.bisa.health.shop.mqtt.OrdersConsumer"></bean>
+    <bean id="consumor2" class="com.bisa.health.shop.mqtt.ObligationOrderConsumer"></bean>
+
+    <!-- queue litener 观察 监听模式 当有消息到达时会通知监听在对应队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="rabbitConnectionFactory">
+        <rabbit:listener ref="consumor1" queue-names="${queue2}"/>
+        <rabbit:listener ref="consumor2" queue-names="${queue4}"/>
+    </rabbit:listener-container>
+
+</beans>
+

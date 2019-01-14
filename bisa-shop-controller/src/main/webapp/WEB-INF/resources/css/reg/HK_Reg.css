@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* 登录注册部分的css */
+.bor-col-white{border-color: white;}
+.bor-none{border:none;}
+.focu-bor-66afe9:focus{border:1px solid #66afe9;}
+.focu-bor-none:focus{border:none;}
+.bor-c{border:1px solid #ccc;}
+.radius-tf-0i{border-radius: 0px 3px 3px 0px !important;}
+.radius-3i{border-radius: 3px !important;}
+
+.pt-20{padding-top: 20px;}
+.pt-30{padding-top: 30px;}
+.pl-41{padding-left: 41px;}
+.pr-12i{padding-right: 12px !important;}
+.pb-20{padding-bottom: 20px;}
+.pb-30{padding-bottom: 30px;}
+.line-h-48{line-height: 48px;}
+.boxsha-none{box-shadow: none;}
+.focu-boxsha-none:focus{box-shadow: none;}
+.mt-54{margin-top: 54px;}
+.mt-100{margin-top: 100px;}
+.ml-0i{margin-left: 0px !important;}
+.mr-0i{margin-right: 0px !important;}
+.min-w-120{min-width: 120px;}
+.has-error .sel-telphone{background-color: #f2dede;border-color:#f2dede;box-shadow: none;}
+.has-success .sel-telphone{background-color: #dff0d8;border-color:#dff0d8;box-shadow: none;}
+.min-h-250{min-height: 250px;}
+.min-h-335{min-height: 335px;}
+.min-h-350{min-height: 350px;}
+.min-h-50{min-height: 50px;}
+.min-h-380{min-height: 380px;}
+.min-h-560{min-height: 560px;}
+
+.w-40{width: 40px;}
+.w-100{width: 100px;}
+.w-120{width: 120px;}
+.w-180{width: 180px;}
+.w-223{width: 223px;}
+.w-235{width: 235px;}
+.w-250{width: 250px;}
+.w-296{width: 296px;}
+.w-335{width: 335px;}
+.w-374{width: 374px;}
+.w-396{width: 396px;}
+.w-400{width: 400px;}
+.w-430{width: 430px;}
+.w-450{width: 450px;}
+.w-520{width: 520px;}
+.h-48{height: 48px;}
+.h-auto{height: auto;}
+
+.t-nonehove:hover{text-decoration: none}
+.hovecol-999:hover{color: #999 !important;}
+.hovecol-666:hover{color: #666 !important;}
+.hov-5cb85c-bold{color: #5cb85c; font-weight: bold;}
+.hovecol-5cb85c:hover{color: #5cb85c !important;}
+.hovecol-5cb85c-bold:hover{color: #5cb85c; font-weight: bold;}
+.hovecol-d63636-bold:hover{color: #d63636; font-weight: bold;}
+.rgba-60{background: rgba(0,0,0,0.6)}
+.col-4a4a4a{color: #4a4a4a}
+.t-150{top: 150px;}
+.t-20{top: 20px;}
+.t-10{top: 10px;}
+.t-30s{top: 30%;}
+.t--300{top: -300px;}
+.r-20{right: 20px;}
+
+.bg-5BC0DE{background-color: #5BC0DE;}
+.bg-232323{background-color: #232323}
+.bg-5CB85C{background-color: #5CB85C}
+.bg-f5f5f5{background-color: #f5f5f5;}
+
+.radius-100{border-radius: 100px;}
+
+.img-18{width: 18px;height: 18px;}
+.img-42{width: 42px;height: 42px;}
+.img-200{width: 200px;height: 200px;}
+
+/* 背景图 */
+.main {
+	margin-top: 5%;
+	width: 100%;
+	min-width: 600px; 
+	height: 600px;
+	background: url(../../../resources/img/reg/bg.jpg) no-repeat;
+	overflow: hidden;
+	background-size: cover;
+	position: relative;
+}
+/* 登录框div */
+.login-div {
+	position: absolute;
+	top: 80px;
+	left: 50%;
+}
+
+.title-selected{font-weight:bold !important;}
+
+/* 异常消息框 */
+.msg-wrap{
+	width: 335px;
+	height: 20px;
+}
+.msg-error{
+	display: none;
+	position: relative;
+    background: #ffebeb;
+    color: #e4393c;
+    border: 1px solid #faccc6;
+    padding: 3px 10px 3px 40px;
+    line-height: 15px;
+    height: auto;
+    float: left;
+    width: 300px;
+    height: 23px;
+}
+.msg-error b{
+	position: absolute;
+    top: 50%;
+    left: 8px;
+    display: block;
+    margin-top: -8px;
+    width: 17px;
+    height: 17px;
+    overflow: hidden;
+    background: url("https://misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2016-1124/i/pwd-icons-new.png") -104px -49px no-repeat;
+}
+
+.ani-weixin-logoin{animation: weixinlogin 0.6s; animation-fill-mode: forwards; -webkit-animation: weixinlogin 0.6s; -webkit-animation-fill-mode: forwards;}
+
+/* 复选框样式 */
+.i-check {   
+    width: 17px;   
+    height: 17px;   
+    position: relative;  
+    margin-top: 5px;   
+}  
+.i-check label {   
+   width: 17px;   
+   height: 17px;   
+   cursor: pointer;   
+   position: absolute;   
+   top: 0;   
+   left: 0;   
+   background: #fff;   
+   border-radius: 4px; 
+   border: 1px solid #bdbdbd;  
+}
+.i-check  label:after {   
+    content: '';   
+    width: 9px;   
+    height: 5px;   
+    position: absolute;   
+    top: 4px;   
+    left: 3px;   
+    border: 3px solid #1A9909;   
+    border-top: none;   
+    border-right: none;   
+    background: transparent;   
+    opacity: 0;   
+    transform: rotate(-45deg);   
+}   
+.i-check input[type=checkbox]:checked + label:after {   
+    opacity: 1;   
+}  
+.i-check input[type=checkbox] {   
+    opacity: 0;   
+    position: absolute;   
+    z-index: 2;   
+    left: 0;   
+    top: 0;   
+    width: 100%;   
+    height: 100%;   
+    margin: 0;   
+}
+
+/* 绑定手机div悬浮样式 */
+.show-bind-phone-div{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: -265px;
+    margin-top: -141px;
+}
+
+@keyframes weixinlogin
+{
+    from {top: -300;opacity:0;}
+    to {top: 0;opacity:1;}
+}
+ 
+@-webkit-keyframes weixinlogin
+{
+    from {top: -300;opacity:0;}
+    to {top: 0;opacity:1;}
+}
+.ani-weixin-logoout{animation: weixinlogout 0.3s; animation-fill-mode: forwards; -webkit-animation: weixinlogout 0.3s; -webkit-animation-fill-mode: forwards;}
+@keyframes weixinlogout
+{
+    from {top: 0;opacity:1;}
+    to {top: -300;opacity:0;}
+}
+@-webkit-keyframes weixinlogout
+{
+    from {top: 0;opacity:1;}
+    to {top: -300;opacity:0;}
+}

@@ -1,0 +1,134 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial, Helvetica, sans-serif;
+	background: #EFEFEF;
+}
+
+.wrap_out {
+	width: 987px;
+	min-height: 600px;
+	margin: 0 auto;
+	background: url(../images/warp_out_bg.png) repeat-y;
+}
+
+.wrap {
+	width: 937px;
+	height: inherit;
+	margin: 0 auto;
+	min-height: 600px;
+}
+
+.wrap .header {
+	background: url(../images/unionpay_header_bg.png) repeat-x;
+	height: 96px;
+}
+
+.t1 {
+	padding-top: 30px;
+	margin-left: 30px;
+}
+
+.wrap .main {
+	padding: 15px 20px;
+	min-height: 600px;
+}
+
+.main_box_L {
+	background: url("../images/main_box_L.png") no-repeat scroll 0 0
+		transparent;
+	height: 43px;
+	width: 10px;
+	color: #FFFFFF;
+	float: left;
+}
+
+.main_box_C {
+	background: url("../images/main_box_C.png") repeat-x scroll 0 0
+		transparent;
+	width: 870px; height : 43px;
+	line-height: 43px;
+	color: #FFFFFF;
+	float: left;
+	height: 43px;
+}
+
+.main_box_R {
+	background: url("../images/main_box_R.png") no-repeat scroll 0 0
+		transparent;
+	height: 43px;
+	width: 10px;
+	color: #FFFFFF;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.main_left {
+	float: left;
+	width: 250px;
+	text-align: center;
+}
+
+.main_right {
+	float: right;
+	width: 630px;
+}
+
+.main_right_con {
+	min-height: 540px;
+	width: 630px;
+}
+
+.input-xlarge {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 3px 3px 3px;
+	color: #555555;
+	display: inline-block;
+	font-size: 13px;
+	height: 28px;
+	line-height: 18px;
+	margin-bottom: 9px;
+	padding: 4px;
+	width: 336px;
+}
+
+.btn {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #F5F5F5;
+	background-image: -moz-linear-gradient(center top, #FFFFFF, #E6E6E6);
+	background-repeat: repeat-x;
+	border-color: #E6E6E6 #E6E6E6 #B3B3B3;
+	border-image: none;
+	border-radius: 4px 4px 4px 4px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px
+		rgba(0, 0, 0, 0.05);
+	color: #333333;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 18px;
+	margin-bottom: 0;
+	padding: 4px 10px;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+}
+
+.tab tr td {padding:10px;}
+
+.wrap .footer {
+	background: url(../images/unionpay_footer_bg.png) repeat-x;
+	height: 42px;
+	width: 937px;
+	margin: 0 auto;
+}

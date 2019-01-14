@@ -1,0 +1,36 @@
+.h-120{height: 120px;}
+.w-320{width: 320px;}
+.w-380{width: 380px;}
+.mg-0-20{margin: 0 20px;}
+.line-through{text-decoration: line-through;}
+.bort-c0c0c0{border-top: 1px solid #c0c0c0;}
+.borb-c0c0c0{border-bottom: 1px solid #c0c0c0;}
+.package-detail{display: none;}
+.bor-col-fff{border-color: #fff;}
+.package-down-btn:hover > span{	border: 1px solid #ccc;	border-bottom: none;}
+.package-down-btn:hover > .package-detail{display: block;
+	-webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,.2);
+	-moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,.2);
+	box-shadow: 0px 2px 10px 0px rgba(0,0,0,.2);}
+	
+.package-detail table{font-size: 16px;}
+.package-detail table tr th{ font-size: 16px; text-align:center; vertical-align: middle;}
+.package-detail table tr td{ font-size: 16px; text-align:center; vertical-align: middle;}
+.bg-col-activate{color:white; background-color: #309DE2;}
+
+/*修改样式*/
+.f-h2{padding-left: 5%;font-weight: bold;}
+.fp{padding-left: 5%;margin-top: 15px;}
+.dail_2{overflow: hidden;}
+.dail_2_left{float: left;margin-left: 53px;margin-top:53px;}
+.dail_2_right{float: left;width: 530px;margin-top:75px;}
+.dail_2_p1{font-weight: bold;font-size: 20px;}
+.dail_2_p2{margin-top: 5px;font-size: 14px;line-height: 25px;}
+.mg-t{margin-top: 55px;}
+.f-h3{font-weight: bold;}
+.dail_3{margin-left: 5%;}
+.d4-p{margin-left: 5%;font-size: 16px;font-weight: bold;margin-top: 25px;;margin-bottom: 25px;}
+.d4-li{list-style:disc;width: 525px;margin-left: 7%;line-height: 25px;}
+.d4-li-p{margin-top: -23px;margin-left: 18px;}
+.dail_4{position: relative;margin-bottom:75px;}
+.d4-img{position: absolute;right:19%;top:-25px;}
